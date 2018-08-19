@@ -149,19 +149,20 @@
   <ItemGroup>
     <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="bubbleSort.h" />
-    <ClInclude Include="exchange.h" />
+    <ClInclude Include="CircularLinkedList.h" />
+    <ClInclude Include="DoubleLinkedList.h" />
+    <ClInclude Include="interchangeAandB.h" />
     <ClInclude Include="heapMap.h" />
+    <ClInclude Include="insertionSort.h" />
     <ClInclude Include="LinkedStructure.h" />
+    <ClInclude Include="mergeSort.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SingleLinkedList.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="bubbleSort.cpp" />
     <ClCompile Include="DataStructure.cpp" />
-    <ClCompile Include="exchange.cpp" />
-    <ClCompile Include="heapMap.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -173,8 +174,16 @@
     <ResourceCompile Include="DataStructure.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="heapMap.cd" />
+    <None Include="Sorting.cd" />
     <None Include="List.cd" />
+    <None Include="Sorting.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bubbleSorting.jpg" />
+    <Image Include="heapMapping.jpg" />
+    <Image Include="insertionSlide.jpg" />
+    <Image Include="mergeSorting.jpg" />
+    <Image Include="Sorting.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

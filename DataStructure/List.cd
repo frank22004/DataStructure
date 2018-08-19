@@ -14,10 +14,10 @@
       <FileName>LinkedStructure.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SingleLinkedList">
+  <Class Name="SingleLinkedList&lt;T&gt;">
     <Position X="0.5" Y="1" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAgAAAAIAAAgA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAACAAgAAAAIAAAAA=</HashCode>
       <FileName>SingleLinkedList.h</FileName>
     </TypeIdentifier>
   </Class>

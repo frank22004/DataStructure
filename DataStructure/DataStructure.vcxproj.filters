@@ -27,9 +27,6 @@
     <ClInclude Include="heapMap.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="exchange.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
     <ClInclude Include="bubbleSort.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
@@ -42,21 +39,27 @@
     <ClInclude Include="SingleLinkedList.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="CircularLinkedList.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleLinkedList.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="insertionSort.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="mergeSort.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="interchangeAandB.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="DataStructure.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="heapMap.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="exchange.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="bubbleSort.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
@@ -66,7 +69,25 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="heapMap.cd" />
     <None Include="List.cd" />
+    <None Include="Sorting.md" />
+    <None Include="Sorting.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="insertionSlide.jpg">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="bubbleSorting.jpg">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="heapMapping.jpg">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="mergeSorting.jpg">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="Sorting.png">
+      <Filter>資源檔</Filter>
+    </Image>
   </ItemGroup>
 </Project>
