@@ -1,6 +1,6 @@
 # Sorting
 ----
-This is the C++ based sorting program using OOP(Object-Oriented Program). The following is four algorithms of sorting, including insertion, bubble, heap and merge.<br><br>
+This is the C++ based sorting program using OOP(Object-Oriented Program). The following is four algorithms of sorting, including [insertion](#1-insertion-sorting), [bubble](#2-bubble-sorting), [heap](#3-heap-sorting) and [merge](#4-merge-sorting).<br><br>
 There is a parental class, called interchangeAandB. It implements an exchange A and B. The heap sorting and bubble sorting use the parental class by virtual inheritance. It will avoid the conflict of the calling function while the main program starting.
 
 ----
