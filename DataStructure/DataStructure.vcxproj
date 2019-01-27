@@ -174,15 +174,20 @@
     <ResourceCompile Include="DataStructure.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\README.md" />
+    <None Include="List.md" />
     <None Include="Sorting.cd" />
     <None Include="List.cd" />
     <None Include="Sorting.md" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="bubbleSorting.jpg" />
+    <Image Include="CircularLinkedList.png" />
+    <Image Include="DoubleLinkedList.png" />
     <Image Include="heapMapping.jpg" />
     <Image Include="insertionSlide.jpg" />
     <Image Include="mergeSorting.jpg" />
+    <Image Include="SingleLinkedList.png" />
     <Image Include="Sorting.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

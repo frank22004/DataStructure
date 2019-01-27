@@ -72,6 +72,8 @@
     <None Include="List.cd" />
     <None Include="Sorting.md" />
     <None Include="Sorting.cd" />
+    <None Include="..\README.md" />
+    <None Include="List.md" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="insertionSlide.jpg">
@@ -87,6 +89,15 @@
       <Filter>資源檔</Filter>
     </Image>
     <Image Include="Sorting.png">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="SingleLinkedList.png">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="DoubleLinkedList.png">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="CircularLinkedList.png">
       <Filter>資源檔</Filter>
     </Image>
   </ItemGroup>
