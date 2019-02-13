@@ -179,16 +179,28 @@
     <None Include="Sorting.cd" />
     <None Include="List.cd" />
     <None Include="Sorting.md" />
+    <None Include="Tree.md" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="BST.png" />
     <Image Include="bubbleSorting.jpg" />
     <Image Include="CircularLinkedList.png" />
     <Image Include="DoubleLinkedList.png" />
     <Image Include="heapMapping.jpg" />
     <Image Include="insertionSlide.jpg" />
+    <Image Include="List.png" />
     <Image Include="mergeSorting.jpg" />
     <Image Include="SingleLinkedList.png" />
     <Image Include="Sorting.png" />
+    <Image Include="Transplant.png" />
+    <Image Include="UML_BinarytSearchTree.PNG" />
+    <Image Include="UML_BubbleSort.PNG" />
+    <Image Include="UML_CircularLinkedList.PNG" />
+    <Image Include="UML_DoubleLinkedList.PNG" />
+    <Image Include="UML_HeapSort.PNG" />
+    <Image Include="UML_InsertionSort.png" />
+    <Image Include="UML_mergeSort.png" />
+    <Image Include="UML_SingleLinkedList.PNG" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

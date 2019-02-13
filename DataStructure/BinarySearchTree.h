@@ -3,21 +3,25 @@
 #include "stdafx.h"
 #include "stack"
 
+//define node[0]:left, node[1]:right, node[2]:parent
+
 using namespace std;
 
-class BinarySearchTree:public LinkedStructure<BinarySearchTree>
+template<typename T>
+class BinarySearchTree:virtual public LinkedStructure<BinarySearchTree<T>,T>
 {
 public:
 	//initialize the node containing only one postnodular address
 	BinarySearchTree();
 
-	BinarySearchTree(int value);
+	//initialize the node
+	BinarySearchTree(T value);
 
 	//Call the LinkedStructure for destruction
 	~BinarySearchTree();
 
 	//the id of a node
-	int id;
+	//int id;
 
 	//a root of a tree
 	BinarySearchTree* root;
@@ -41,7 +45,7 @@ public:
 	void inorderWalk();
 
 	//search a subtree for a certain value
-	BinarySearchTree* search(int k);
+	BinarySearchTree* search(T querryValue);
 
 	//find the smallest value in a sbutree
 	BinarySearchTree* min();
@@ -49,8 +53,8 @@ public:
 	//find the largest value in a subtree
 	BinarySearchTree* max();
 
-	//insert a node by ascending order
-	void insert(BinarySearchTree* insertValue);
+	//add new value
+	void append(T input_value);
 
 	//replace A with B in liked structure to assists the deletion of A
 	void transplant(BinarySearchTree* deletednode, BinarySearchTree* nextOfdeletednode);
@@ -59,6 +63,12 @@ public:
 	void erase(BinarySearchTree* deletednode);
 
 private:
+	//insert a node by ascending order
+	void insert(BinarySearchTree* insertValue);
+
+	//for the appendix of a new value
+	BinarySearchTree(T value, BinarySearchTree<T>* node);
+
 	//a temp variable for search, min/max
 	BinarySearchTree* x;
 	
@@ -67,69 +77,85 @@ private:
 
 	//a temp variable for root
 	BinarySearchTree* xtemp;
+
+	//using a stacks as a buffer of encountered nodes for inorder tree walk
+	stack<BinarySearchTree*>leftstack;
 };
 
 
-
-BinarySearchTree::BinarySearchTree():LinkedStructure(3)
+template<typename T>
+inline BinarySearchTree<T>::BinarySearchTree():LinkedStructure<BinarySearchTree<T>, T>(3)
 {	
 }
 
-inline BinarySearchTree::BinarySearchTree(int value):LinkedStructure(3)
+template<typename T>
+inline BinarySearchTree<T>::BinarySearchTree(T value):LinkedStructure<BinarySearchTree<T>,T>(value,3)
 {
-	id = value;
+	//id = value;
 	root = this;
 }
 
-BinarySearchTree::~BinarySearchTree()
+template<typename T>
+inline BinarySearchTree<T>::~BinarySearchTree()
 {
 }
 
-inline void BinarySearchTree::parent(BinarySearchTree* head)
+template<typename T>
+inline void BinarySearchTree<T>::parent(BinarySearchTree* head)
 {
-	next[0]=head;
+	//next[0]=head;
+	this->SetNode(head, 2);
 }
 
-inline BinarySearchTree *BinarySearchTree::parent()
+template<typename T>
+inline BinarySearchTree<T>* BinarySearchTree<T>::parent()
 {
-	return next[0];
+	return this->GetNode(2);
 }
 
-inline void BinarySearchTree::left(BinarySearchTree* leftchild)
+template<typename T>
+inline void BinarySearchTree<T>::left(BinarySearchTree* leftchild)
 {
-	next[1] = leftchild;
+	//next[1] = leftchild;
+	this->SetNode(leftchild, 0);
 }
 
-inline BinarySearchTree *BinarySearchTree::left()
+template<typename T>
+inline BinarySearchTree<T>* BinarySearchTree<T>::left()
 {
-	return next[1];
+	return this->GetNode(0);
 }
 
-inline void BinarySearchTree::right(BinarySearchTree* rightchild)
+template<typename T>
+inline void BinarySearchTree<T>::right(BinarySearchTree* rightchild)
 {
-	next[2] = rightchild;
+	//next[2] = rightchild;
+	this->SetNode(rightchild, 1);
 }
 
-inline BinarySearchTree *BinarySearchTree::right()
+template<typename T>
+inline BinarySearchTree<T>* BinarySearchTree<T>::right()
 {
-	return next[2];
+	return this->GetNode(1);
 }
 
-inline void BinarySearchTree::inorderWalk()
+template<typename T>
+inline void BinarySearchTree<T>::inorderWalk()
 {
 	//begin from root
 	x = this->root;
-	printf("inorder輸出所有的node: ");
+	printf("Output all of the nodes by inorder: \n");
 
-	//using a stacks as a buffer of encountered nodes
-	stack<BinarySearchTree*>leftstack;
+	//search the left node from the root at first, then cast every node by descending order. 
+	//Each node will be evaluated the existance of the right child.
+	//If existed, the directory will be change to the right child and search the left side as below.
 	do
 	{
 		//output every node in stacks
 		while (!leftstack.empty())
 		{
 			ytemp = leftstack.top();
-			printf(" %d ", ytemp->id);
+			printf("The value of %p is %d , parent = %p, left child = %p, right child = %p \n", ytemp, ytemp->GetValues(), ytemp->parent(), ytemp->left(), ytemp->right());
 			leftstack.pop();
 
 			//change the directroy to right child if exists
@@ -146,16 +172,18 @@ inline void BinarySearchTree::inorderWalk()
 			leftstack.push(x);
 			x = x->left();
 		}
-	} while ((!leftstack.empty()));
+	} while (!leftstack.empty());
 }
 
-inline BinarySearchTree *BinarySearchTree::search(int k)
+template<typename T>
+inline BinarySearchTree<T>* BinarySearchTree<T>::search(T querryValue)
 {
-	x = this;
+	x = root;
 
-	while ( (x !=NULL) && (k != x->id) )
+	//search the left side if the querryValue is smaller than root, vice reversa.
+	while ( (x != nullptr) && (querryValue != x->GetValues()) )
 	{
-		if (k < x->id)
+		if (querryValue < (x->GetValues()) )
 		{
 			x = x->left();
 		}
@@ -167,9 +195,10 @@ inline BinarySearchTree *BinarySearchTree::search(int k)
 	return x;
 }
 
-inline BinarySearchTree *BinarySearchTree::min()
+template<typename T>
+inline BinarySearchTree<T>* BinarySearchTree<T>::min()
 {
-	x = this;
+	x = root;
 
 	while (x->left() != nullptr)
 	{
@@ -179,9 +208,10 @@ inline BinarySearchTree *BinarySearchTree::min()
 	return x;
 }
 
-inline BinarySearchTree * BinarySearchTree::max()
+template<typename T>
+inline BinarySearchTree<T>* BinarySearchTree<T>::max()
 {
-	x = this;
+	x = root;
 
 	while (x->right() != nullptr)
 	{
@@ -190,17 +220,26 @@ inline BinarySearchTree * BinarySearchTree::max()
 	return x;
 }
 
-inline void BinarySearchTree::insert(BinarySearchTree* insertValue)
+template<typename T>
+inline void BinarySearchTree<T>::append(T input_value)
+{
+	BinarySearchTree<T>* newnode = new BinarySearchTree<T>(input_value, this);
+
+	this->insert(newnode);
+}
+
+template<typename T>
+inline void BinarySearchTree<T>::insert(BinarySearchTree* insertValue)
 {
 	ytemp = nullptr;
-	xtemp = this->root;
+	xtemp = root;
 
 	//find the nearest value in the tree
 	while (xtemp != nullptr)
 	{
 		ytemp = xtemp;
 
-		if ((insertValue->id) < (xtemp->id))
+		if ((insertValue->GetValues()) < (xtemp->GetValues()))
 		{
 			xtemp = xtemp->left();
 		}
@@ -219,7 +258,7 @@ inline void BinarySearchTree::insert(BinarySearchTree* insertValue)
 		this->root = insertValue;
 		insertValue->root = insertValue;
 	}
-	else if ((insertValue->id) < (ytemp->id))
+	else if ((insertValue->GetValues()) < (ytemp->GetValues()))
 	{
 		//Conversely, configure insertValue as the left child if its value is lower than parent.
 		ytemp->left(insertValue);
@@ -233,7 +272,8 @@ inline void BinarySearchTree::insert(BinarySearchTree* insertValue)
 	}
 }
 
-inline void BinarySearchTree::transplant(BinarySearchTree* deletednode, BinarySearchTree* nextOfdeletednode)
+template<typename T>
+inline void BinarySearchTree<T>::transplant(BinarySearchTree* deletednode, BinarySearchTree* nextOfdeletednode)
 {
 	if (deletednode->parent() == nullptr)
 	{
@@ -257,7 +297,8 @@ inline void BinarySearchTree::transplant(BinarySearchTree* deletednode, BinarySe
 	}
 }
 
-inline void BinarySearchTree::erase(BinarySearchTree * deletednode)
+template<typename T>
+inline void BinarySearchTree<T>::erase(BinarySearchTree* deletednode)
 {
 	if (deletednode->left() == nullptr)
 	{
@@ -288,5 +329,11 @@ inline void BinarySearchTree::erase(BinarySearchTree * deletednode)
 		x->left(deletednode->left());
 		x->left()->parent(x);
 	}
+}
+
+template<typename T>
+inline BinarySearchTree<T>::BinarySearchTree(T value, BinarySearchTree<T>* node):LinkedStructure<BinarySearchTree<T>, T>(value, 3)
+{
+	root = node;
 }
 

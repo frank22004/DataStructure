@@ -74,6 +74,7 @@
     <None Include="Sorting.cd" />
     <None Include="..\README.md" />
     <None Include="List.md" />
+    <None Include="Tree.md" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="insertionSlide.jpg">
@@ -98,6 +99,39 @@
       <Filter>資源檔</Filter>
     </Image>
     <Image Include="CircularLinkedList.png">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="List.png">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="BST.png">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="Transplant.png">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="UML_BinarytSearchTree.PNG">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="UML_BubbleSort.PNG">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="UML_CircularLinkedList.PNG">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="UML_DoubleLinkedList.PNG">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="UML_HeapSort.PNG">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="UML_InsertionSort.png">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="UML_mergeSort.png">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="UML_SingleLinkedList.PNG">
       <Filter>資源檔</Filter>
     </Image>
   </ItemGroup>

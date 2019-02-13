@@ -3,8 +3,10 @@
 This is a C++ based listing structure using OOP (Object-Oriented Program). The following is implementation of list structure, including [single linked list](#single-linked-list), [double linked list](#double-linked-list), and [circlar linked list](#Circular-Linked-List) 
 
 ----
+![#List Fig](List.png)
 
 ## Single linked list
+![Single Linked List](UML_SingleLinkedList.png)
 The single linked list, delineated at fig1, is an one directional chain node by node. It is defined by two classes, [LinkedStructure](#LinkedStructure) and [SingleLinkedList](#SingleLinkedList). 
 The first is a definition of a node, which contains a value with certain type and pointers to the relative nodes.
 The last is a definition of a list. It defines an addition method, called append.
@@ -60,6 +62,7 @@ Aneal the new node into the end by ```SetNode()```
 
 ----
 ## Double-Linked List
+![Double Linked List](UML_DoubleLinkedList.png)
 The double-linked list, delineated at fig2 , is a two directional chain. The double-linked list is defined by two classes, [LinkedStructure](#LinkedStructure) and DoubleLinkedList. 
 The first is introduced in the above paragraph.
 The last is the same as [```SingleLinkedList.h```](#SingleLinkedList) besides that every nodes store the address of a parent and a child.
@@ -71,16 +74,17 @@ The algorithm is follow the [SingleLinkedList](#SingleLinkedList) except for the
 
 1. ###### Two nodular address
 
-The constructor, ```DoubleLinkedList(T inputevalue)```, will assign two value and one linkage to ```LinkeStructure.h```.
+    The constructor, ```DoubleLinkedList(T inputevalue)```, will assign two value and one linkage to ```LinkeStructure.h```.
 
 2. ###### Anealing process
->```C++ numbers-line
->newnode->SetNode(current, 1);
->```
-It configues the parental address by ```SetNode()```. 1 represnts the second address in ```vector<T *>next```.
+    ```C++ numbers-line
+    newnode->SetNode(current, 1);
+    ```
+   It configues the parental address by ```SetNode()```. 1 represnts the second address in ```vector<T *>next```.
 
 ---
 ## Circular Linked List
+![Circular Linked List](UML_CircularLinkedList.png)
 The circular linked list, delineated at fig3 , is bidirectional loop. The circular linked list is defined by two classes, [LinkedStructure](#LinkedStructure) and CircularLinkedList. 
 The first is introduced in the above paragraph.
 The last is the same as [```DoubleLinkedList.h```](#DoubleLinkedList) besides that the last one will point to the first.

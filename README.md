@@ -5,4 +5,4 @@ Their relations and attributes are also drawn on the UML graphs, which is called
 The following is the description of the algorithm:
 * [Sorting](/DataStructure/Sorting.md)
 * [Linked Structure](/DataStructure/List.md)
-* Tree 
+* [Tree](/DataStructure/Tree.md) 
