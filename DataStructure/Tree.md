@@ -9,7 +9,7 @@ This is a C++ based listing structure using OOP (Object-Oriented Program). The f
 The BST inherits the property of ```LinkedListStructure.h``` and defines two child node for every node. 
 The left child is smaller than the right, as describe on fig1. Its interchangeble property makes the algorithm a convenient search engine.
 
->![Binary Search Tree](BST.png)
+>![#Binary Search Tree](BST.png)
 >fig1. Po-Chun Huang(2018), Data Structure, NTUT EE
 
 While node is established through ```BinarySearchTree(T value)```, it contains four pointers which link to its relatives.
@@ -69,7 +69,7 @@ The insert function will insert the new one into the tree by ascending order. We
     1. ```void transplant(BinarySearchTree* deletednode, BinarySearchTree* nextOfdeletednode)```
         
         Transplant function is to replace an existing node with a selected node. THe algorithm will anneal the parent node of an existing node to the selected node, detail as fig2.
-        >![Transplant](transplant.png)
+        >![#Transplant](transplant.png)
         >fig2. Po-Chun Huang(2018), Data Structure, NTUT EE
 
     2. ```BinarySearchTree* min()```

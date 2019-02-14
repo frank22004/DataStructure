@@ -5,15 +5,15 @@ There is a parental class, called interchangeAandB. It implements an exchange A 
 
 ----
 
-![class UML](Sorting.png)
+![#class UML](Sorting.png)
 
 #### 1. Insertion Sorting
-![insertionsort](UML_InsertionSort.png)
+![#insertionsort](UML_InsertionSort.png)
 
 You successively chose a value and insert it into a forwarding position, which is smaller than the next one and larger than the previous. For instance, the fig1 demonstrates that 30 is extracted and insert into the position between 20 and 50. The position is three steps forward compared to its original state.
 * Time Complexity =  *O(n<sup>2</sup>)*
 * Space Complexity = *O(1)*
->![image of insertion sorting](insertionSlide.jpg)
+>![#image of insertion sorting](insertionSlide.jpg)
 >fig1. Po-Chun Huang(2018), Data Structure, NTUT EE
 ##### algorithm of insertion
 ```C++ line-numbers
@@ -24,11 +24,11 @@ You just put any types of an array, T* arr, by reference. Also, the length of an
 
 
 #### 2. Bubble Sorting
-![bubble sort](UML_BubbleSort.png)
+![#bubble sort](UML_BubbleSort.png)
 You successively swap a value with its next one until it is smaller than the next one. For instance, the fig2 demonstrates that 75 swaps with 30 and stop in front of 80.
 * Time Complexity =  *O(n<sup>2</sup>)*
 * Space Complexity = *O(1)*
->![image of bubble sorting](bubbleSorting.jpg)
+>![#image of bubble sorting](bubbleSorting.jpg)
 >fig2. Po-Chun Huang(2018), Data Structure, NTUT EE
 ##### algorithm of bubble
 ```C++ line-numbers
@@ -39,11 +39,11 @@ You just put any types of an array, T* arr, by reference. Also, the length of an
 
 
 #### 3. Heap Sorting
-![Heap Sort](UML_heapSort.png)
+![#Heap Sort](UML_heapSort.png)
 You can transform an array into a heapMap, which is every node is larger than its two children. For instance, fig3 demonstrates that the first element of an array is 16. 16 is larger than its two children, 14 and 10. The relation between parent and children is T[i] and T[2i]/T[2i + 1].
 * Time Complexity =  *O(lg n)*
 * Space Complexity = *O(1)*
->![image of heap mapping](heapMapping.jpg)
+>![#image of heap mapping](heapMapping.jpg)
 >fig3. Po-Chun Huang(2018), Data Structure, NTUT EE
 ##### algorithm of heap
 it contains two parts, heap transformation, and heap sorting. The description is the following:
@@ -66,12 +66,12 @@ it contains two parts, heap transformation, and heap sorting. The description is
 
 
 #### 4. Merge Sorting 
-![MergeSort](UML_mergeSort.png)
+![#MergeSort](UML_mergeSort.png)
 
 An array will successively split into two sub-arrays. Then, every unit of these sub-arrays will extract and restore into a new one by comparison two sub-arrays.
 * Time Complexity =  *O(n)*
 * Space Complexity = *O(n)*
->![image of merge sorting](mergeSorting.jpg)
+>![#image of merge sorting](mergeSorting.jpg)
 >fig4. Po-Chun Huang(2018), Data Structure, NTUT EE
 ##### algorithm of merge
 ```C++ line-numbers
